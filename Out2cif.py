@@ -9,7 +9,7 @@ counter = 0
 f = argv[argv.index('-o')+1]
 t = argv[argv.index('-t')+1]
 
-print(f)
+fi=f[:-4]
 
 a_list=[]
 
@@ -177,7 +177,7 @@ intro = '''#####################################################################
 
 data_cryst = 'data_0_Form-I' + '\n' + '_symmetry_cell_setting           monoclinic' + '\n' + '_symmetry_space_group_name_H-M   ' + '\n' + '_symmetry_Int_Tables_number      14' + '\n' + '_space_group_name_Hall           ' + '\n' + 'loop_' + '\n' + '_symmetry_equiv_pos_site_id' + '\n' + '_symmetry_equiv_pos_as_xyz' + '\n' + '1 x,y,z' + '\n' + '2 1/2-x,1/2+y,1/2-z' + '\n' + '3 -x,-y,-z' + '\n' + '4 1/2+x,1/2-y,1/2+z' + '\n' + '_cell_length_a                   ' + system_cell.a + '\n' + '_cell_length_b                   ' + system_cell.b  + '\n' + '_cell_length_c                   ' + system_cell.c  + '\n' + '_cell_angle_alpha                ' + system_cell.alpha  + '\n' + '_cell_angle_beta                 ' + system_cell.beta  + '\n' + '_cell_angle_gamma                ' + system_cell.gamma  + '\n' + '_cell_volume                     ' + system.volume_cell + '\n' + 'loop_'  + '\n' + '_atom_site_label'  + '\n' + '_atom_site_type_symbol'  + '\n' + '_atom_site_fract_x' + '\n' + '_atom_site_fract_y'  + '\n' + '_atom_site_fract_z' + '\n'
 
-f=open('out.cif','w')
+f=open(fi+'.cif','w')
 f.write(intro)
 f.write(data_cryst)
 f.write(true_atom_table)
